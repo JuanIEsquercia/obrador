@@ -166,8 +166,8 @@ export default function AccionesPedido({ pedido }: { pedido: Pedido }) {
           {[
             { label: 'Pedido creado', hecho: true },
             { label: 'Publicar licitación', hecho: pedido.estado !== 'borrador' },
-            { label: 'Recibir cotizaciones', hecho: pedido.estado === 'cerrado', pendiente: pedido.estado === 'publicado' },
-            { label: 'Elegir proveedor', hecho: false, pendiente: pedido.estado === 'cerrado' },
+            { label: 'Recibir cotizaciones', hecho: false, pendiente: pedido.estado === 'publicado' },
+            { label: 'Elegir proveedor', hecho: false, pendiente: false },
           ].map(({ label, hecho, pendiente }) => (
             <div key={label} className="flex items-center gap-2 text-xs">
               <span className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] flex-shrink-0 ${
