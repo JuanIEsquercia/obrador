@@ -20,9 +20,9 @@ type NavLink = {
 }
 
 const LINKS_COMPRADOR: NavLink[] = [
-  { href: '/comprador',              icono: 'dashboard',      label: 'Panel de Control', exacto: true },
-  { href: '/comprador/pedidos',      icono: 'shopping_cart',  label: 'Mis Pedidos' },
-  { href: '/comprador/pedidos/nuevo',icono: 'add_circle',     label: 'Nueva Licitación', exacto: true },
+  { href: '/comprador',             icono: 'dashboard',   label: 'Panel de Control', exacto: true },
+  { href: '/comprador/obras',       icono: 'domain',      label: 'Mis Obras' },
+  { href: '/comprador/obras/nueva', icono: 'add_circle',  label: 'Nueva Obra', exacto: true },
 ]
 
 const LINKS_VENDEDOR: NavLink[] = [
@@ -148,7 +148,7 @@ export default function NavegacionPrincipal({ nombre, empresa, rol }: Props) {
         {/* FAB central */}
         <div className="relative -top-5">
           <Link
-            href={esComprador ? '/comprador/pedidos/nuevo' : '/vendedor/pedidos'}
+            href={esComprador ? '/comprador/obras/nueva' : '/vendedor/pedidos'}
             className="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-primary/30 border-4 border-surface"
           >
             <span className="material-symbols-outlined text-3xl">add</span>

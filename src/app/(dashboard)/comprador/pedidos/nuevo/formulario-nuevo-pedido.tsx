@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { crearClienteNavegador } from '@/lib/supabase/cliente'
+import catalogoDataJSON from '@/lib/catalogo-data.json'
 import type { FamiliaProducto, ItemLineaPedido } from '@/types'
 
+const catalogoDb = catalogoDataJSON as Record<string, Record<string, Array<{ variante: string, unidad: string }>>>
 const UNIDADES = ['unidades', 'kg', 'bolsas', 'm²', 'm³', 'm', 'litros', 'chapas', 'rollos', 'juegos', 'otros']
 
 interface DatosIniciales {
@@ -12,10 +14,12 @@ interface DatosIniciales {
   descripcion: string
   direccion_entrega: string
   fecha_entrega: string
+  fecha_cierre_cotizaciones: string
 }
 
 interface Props {
   familias: FamiliaProducto[]
+  obraId?: string            // Requerido en modo creación; no aplica en edición
   // Modo edición: se pasan los datos existentes
   pedidoId?: string
   datosIniciales?: DatosIniciales
@@ -30,19 +34,24 @@ const lineaVacia = (familia_id: number): ItemLineaPedido => ({
   notas: '',
 })
 
-export default function FormularioNuevoPedido({ familias, pedidoId, datosIniciales, lineasIniciales }: Props) {
+export default function FormularioNuevoPedido({ familias, obraId, pedidoId, datosIniciales, lineasIniciales }: Props) {
   const router = useRouter()
   const [supabase] = useState(() => crearClienteNavegador())
-  const [cargando, setCargando] = useState(false)
+  const [accionCargando, setAccionCargando] = useState<'borrador' | 'publicar' | null>(null)
+  const cargando = accionCargando !== null
   const [error, setError] = useState<string | null>(null)
 
   const modoEdicion = !!pedidoId
+
+  // Default cierre: 7 días desde hoy
+  const defaultCierre = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
 
   const [pedido, setPedido] = useState<DatosIniciales>({
     titulo: datosIniciales?.titulo ?? '',
     descripcion: datosIniciales?.descripcion ?? '',
     direccion_entrega: datosIniciales?.direccion_entrega ?? '',
     fecha_entrega: datosIniciales?.fecha_entrega ?? '',
+    fecha_cierre_cotizaciones: datosIniciales?.fecha_cierre_cotizaciones ?? defaultCierre,
   })
 
   const [familiaActiva, setFamiliaActiva] = useState<number | null>(null)
@@ -77,17 +86,27 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
 
     if (!pedido.titulo.trim()) { setError('El título del pedido es requerido.'); return }
     if (!pedido.direccion_entrega.trim()) { setError('La dirección de entrega es requerida.'); return }
+    if (!pedido.fecha_cierre_cotizaciones) { setError('La fecha límite de cotizaciones es requerida.'); return }
     if (!pedido.fecha_entrega) { setError('La fecha de entrega es requerida.'); return }
+    if (pedido.fecha_cierre_cotizaciones >= pedido.fecha_entrega) {
+      setError('La fecha límite de cotizaciones debe ser anterior a la fecha de entrega.')
+      return
+    }
     if (lineas.length === 0) { setError('Agregá al menos un ítem al pedido.'); return }
     if (lineas.some(l => !l.descripcion.trim() || !l.cantidad || !l.unidad)) {
       setError('Completá todos los campos de los ítems (descripción, cantidad y unidad).')
       return
     }
 
-    setCargando(true)
+    if (!modoEdicion && !obraId) {
+      setError('Error interno: falta el ID de la obra. Volvé a la obra e intentá de nuevo.')
+      return
+    }
+
+    setAccionCargando(publicar ? 'publicar' : 'borrador')
 
     const { data: { user } } = await supabase.auth.getUser()
-    if (!user) { setError('Sesión expirada.'); setCargando(false); return }
+    if (!user) { setError('Sesión expirada.'); setAccionCargando(null); return }
 
     if (modoEdicion) {
       // ── Modo edición: UPDATE pedido + reemplazar líneas ──
@@ -98,13 +117,14 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
           descripcion: pedido.descripcion || null,
           direccion_entrega: pedido.direccion_entrega,
           fecha_entrega: pedido.fecha_entrega,
+          fecha_cierre_cotizaciones: pedido.fecha_cierre_cotizaciones || null,
         })
         .eq('id', pedidoId)
         .eq('comprador_id', user.id)
 
       if (errUpdate) {
         setError('No se pudo actualizar el pedido.')
-        setCargando(false)
+        setAccionCargando(null)
         return
       }
 
@@ -125,7 +145,7 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
 
       if (errLineas) {
         setError('Se actualizó el pedido pero hubo un problema con los ítems.')
-        setCargando(false)
+        setAccionCargando(null)
         return
       }
 
@@ -136,7 +156,7 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
           .eq('id', pedidoId)
       }
 
-      router.push(`/comprador/pedidos/${pedidoId}`)
+      router.push(`/comprador/obras/${obraId}/licitaciones/${pedidoId}`)
       router.refresh()
       return
     }
@@ -149,17 +169,19 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
       .insert({
         id: nuevoId,
         comprador_id: user.id,
+        obra_id: obraId,
         titulo: pedido.titulo,
         descripcion: pedido.descripcion || null,
         direccion_entrega: pedido.direccion_entrega,
         fecha_entrega: pedido.fecha_entrega,
+        fecha_cierre_cotizaciones: pedido.fecha_cierre_cotizaciones || null,
         estado: 'borrador',
         publicado_en: null,
       })
 
     if (errPedido) {
       setError('No se pudo crear el pedido. Intentá de nuevo.')
-      setCargando(false)
+      setAccionCargando(null)
       return
     }
 
@@ -177,7 +199,7 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
 
     if (errLineas) {
       setError('Se creó el pedido pero hubo un problema con los ítems. Intentá de nuevo.')
-      setCargando(false)
+      setAccionCargando(null)
       return
     }
 
@@ -188,7 +210,7 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
         .eq('id', nuevoId)
     }
 
-    router.push(`/comprador/pedidos/${nuevoId}`)
+    router.push(`/comprador/obras/${obraId}/licitaciones/${nuevoId}`)
     router.refresh()
   }
 
@@ -222,26 +244,43 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
           />
         </div>
 
+        <div>
+          <label className="label">Dirección de entrega</label>
+          <input
+            type="text"
+            className="input"
+            placeholder="Calle 123, Corrientes Capital"
+            value={pedido.direccion_entrega}
+            onChange={e => setPedido(p => ({ ...p, direccion_entrega: e.target.value }))}
+          />
+        </div>
+
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="label">Dirección de entrega</label>
+            <label className="label">Fecha límite de cotizaciones</label>
             <input
-              type="text"
+              type="date"
               className="input"
-              placeholder="Calle 123, Corrientes Capital"
-              value={pedido.direccion_entrega}
-              onChange={e => setPedido(p => ({ ...p, direccion_entrega: e.target.value }))}
+              min={new Date().toISOString().split('T')[0]}
+              value={pedido.fecha_cierre_cotizaciones}
+              onChange={e => setPedido(p => ({ ...p, fecha_cierre_cotizaciones: e.target.value }))}
             />
+            <p className="text-xs text-on-surface-variant mt-1">
+              Hasta cuándo aceptás ofertas de proveedores
+            </p>
           </div>
           <div>
             <label className="label">Fecha de entrega requerida</label>
             <input
               type="date"
               className="input"
-              min={new Date().toISOString().split('T')[0]}
+              min={pedido.fecha_cierre_cotizaciones || new Date().toISOString().split('T')[0]}
               value={pedido.fecha_entrega}
               onChange={e => setPedido(p => ({ ...p, fecha_entrega: e.target.value }))}
             />
+            <p className="text-xs text-on-surface-variant mt-1">
+              Cuándo necesitás el material en obra
+            </p>
           </div>
         </div>
       </div>
@@ -281,6 +320,9 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
                 .map((l, i) => ({ linea: l, index: i }))
                 .filter(({ linea }) => linea.familia_id === familia_id)
 
+              const dataFamilia = catalogoDb[familia?.nombre || ''] || {}
+              const productos = Object.keys(dataFamilia)
+
               return (
                 <div key={familia_id} className="border border-outline-variant rounded-lg p-4">
                   <div className="flex items-center justify-between mb-3">
@@ -301,8 +343,41 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
                           {index === itemsFamilia[0].index && (
                             <p className="text-xs text-on-surface-variant mb-1">Descripción</p>
                           )}
-                          <input type="text" className="input text-sm" placeholder="ej: Ladrillo hueco 18x18x33"
-                            value={linea.descripcion} onChange={e => actualizarLinea(index, 'descripcion', e.target.value)} />
+                          {productos.length > 0 ? (
+                            <select 
+                              className="input text-sm truncate"
+                              value={linea.descripcion}
+                              onChange={e => {
+                                const descMatch = e.target.value;
+                                actualizarLinea(index, 'descripcion', descMatch);
+                                // Autocompletar la unidad
+                                for (const p of productos) {
+                                  const match = dataFamilia[p].find(v => `${p} — ${v.variante}` === descMatch);
+                                  if (match) {
+                                    actualizarLinea(index, 'unidad', match.unidad);
+                                    break;
+                                  }
+                                }
+                              }}
+                            >
+                              <option value="">Seleccionar material...</option>
+                              {productos.map(prod => (
+                                <optgroup key={prod} label={prod}>
+                                  {dataFamilia[prod].map(v => {
+                                    const labelStr = `${prod} — ${v.variante}`;
+                                    return (
+                                      <option key={labelStr} value={labelStr}>
+                                        {v.variante}
+                                      </option>
+                                    );
+                                  })}
+                                </optgroup>
+                              ))}
+                            </select>
+                          ) : (
+                            <input type="text" className="input text-sm" placeholder="ej: Ladrillo hueco 18x18x33"
+                              value={linea.descripcion} onChange={e => actualizarLinea(index, 'descripcion', e.target.value)} />
+                          )}
                         </div>
                         <div className="col-span-2">
                           {index === itemsFamilia[0].index && (
@@ -317,7 +392,9 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
                           )}
                           <select className="input text-sm" value={linea.unidad}
                             onChange={e => actualizarLinea(index, 'unidad', e.target.value)}>
-                            {UNIDADES.map(u => <option key={u} value={u}>{u}</option>)}
+                            {Array.from(new Set([...UNIDADES, linea.unidad])).map(u => (
+                              <option key={u} value={u}>{u}</option>
+                            ))}
                           </select>
                         </div>
                         <div className="col-span-2">
@@ -344,17 +421,22 @@ export default function FormularioNuevoPedido({ familias, pedidoId, datosInicial
       </div>
 
       {error && (
-        <div className="rounded-lg bg-error-container border border-error/20 px-4 py-3 text-sm text-on-error-container">
+        <div className="rounded-xl bg-error-container/50 border border-error/20 px-4 py-3 text-sm text-error flex items-start gap-2">
+          <span className="material-symbols-outlined text-base flex-shrink-0 mt-0.5">error</span>
           {error}
         </div>
       )}
 
       <div className="flex items-center gap-3 justify-end">
         <button type="button" onClick={() => guardar(false)} disabled={cargando} className="btn-secundario">
-          {modoEdicion ? 'Guardar cambios' : 'Guardar borrador'}
+          {accionCargando === 'borrador'
+            ? 'Guardando...'
+            : modoEdicion ? 'Guardar cambios' : 'Guardar borrador'}
         </button>
         <button type="button" onClick={() => guardar(true)} disabled={cargando} className="btn-primario">
-          {cargando ? 'Guardando...' : modoEdicion ? 'Guardar y publicar →' : 'Publicar pedido →'}
+          {accionCargando === 'publicar'
+            ? 'Publicando...'
+            : modoEdicion ? 'Guardar y publicar →' : 'Publicar pedido →'}
         </button>
       </div>
 

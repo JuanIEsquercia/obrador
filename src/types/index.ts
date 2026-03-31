@@ -4,6 +4,7 @@
 
 export type RolUsuario = 'comprador' | 'vendedor'
 export type EstadoPedido = 'borrador' | 'publicado' | 'cerrado'
+export type EstadoObra = 'activa' | 'terminada'
 
 export interface Perfil {
   id: string
@@ -21,6 +22,16 @@ export interface FamiliaProducto {
   nombre: string
 }
 
+export interface Obra {
+  id: string
+  comprador_id: string
+  nombre: string
+  descripcion: string | null
+  estado: EstadoObra
+  creado_en: string
+  actualizado_en: string
+}
+
 export interface VendedorFamilia {
   vendedor_id: string
   familia_id: number
@@ -29,10 +40,12 @@ export interface VendedorFamilia {
 export interface Pedido {
   id: string
   comprador_id: string
+  obra_id: string
   titulo: string
   descripcion: string | null
   direccion_entrega: string
-  fecha_entrega: string   // ISO date "YYYY-MM-DD"
+  fecha_entrega: string                   // ISO date "YYYY-MM-DD" — cuándo se necesita el material
+  fecha_cierre_cotizaciones: string | null  // ISO date "YYYY-MM-DD" — deadline para recibir ofertas
   estado: EstadoPedido
   publicado_en: string | null
   creado_en: string
@@ -76,10 +89,37 @@ export interface LineaCotizacion {
   linea_pedido_id: string
   precio_unitario: number | null
   cantidad_oferta: number | null
+  marca_ofertada?: string | null
+  variante_ofertada?: string | null
   notas: string | null
   creado_en: string
   // join
   linea_pedido?: LineaPedido
+}
+
+// ---- Tipos compuestos de obras ----
+
+export interface ObraConLicitaciones extends Obra {
+  licitaciones: Pedido[]
+  _count?: { licitaciones: number }
+}
+
+export interface ConsolidadoFamilia {
+  familia_id: number
+  familia_nombre: string
+  monto_total: number
+}
+
+export interface ConsolidadoLicitacion {
+  pedido_id: string
+  titulo: string
+  monto: number
+}
+
+export interface ConsolidadoObra {
+  monto_total: number
+  por_familia: ConsolidadoFamilia[]
+  por_licitacion: ConsolidadoLicitacion[]
 }
 
 // ---- Tipos para formularios ----
@@ -113,6 +153,8 @@ export interface FormLineaCotizacion {
   linea_pedido_id: string
   precio_unitario: string   // string para el input, se parsea al enviar
   cantidad_oferta: string
+  marca_ofertada: string
+  variante_ofertada: string
   notas: string
 }
 

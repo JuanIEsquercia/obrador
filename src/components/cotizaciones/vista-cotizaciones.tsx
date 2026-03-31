@@ -208,11 +208,21 @@ export default function VistaCotizaciones({ lineas, cotizaciones, pedidoId, pedi
                                 {esMenorPrecio && cotizaciones.length > 1 && (
                                   <span className="text-primary ml-1 text-xs">↓</span>
                                 )}
+                                
+                                {lineaCot?.marca_ofertada && (
+                                  <p className="text-xs font-bold text-primary mt-1">{lineaCot.marca_ofertada}</p>
+                                )}
+                                {lineaCot?.variante_ofertada && (
+                                  <p className="text-[11px] text-on-surface-variant">{lineaCot.variante_ofertada}</p>
+                                )}
+
                                 {cantidad != null && cantidad !== linea.cantidad && (
-                                  <p className="text-xs text-secondary">Ofrece: {cantidad} {linea.unidad}</p>
+                                  <p className="text-xs text-secondary mt-0.5">Ofrece: {cantidad} {linea.unidad}</p>
                                 )}
                                 {lineaCot?.notas && (
-                                  <p className="text-xs text-on-surface-variant italic">{lineaCot.notas}</p>
+                                  <p className="text-[11px] text-on-surface-variant italic mt-0.5 border-t border-outline-variant/20 pt-1">
+                                    {lineaCot.notas}
+                                  </p>
                                 )}
                               </div>
                             ) : (

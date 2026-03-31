@@ -18,7 +18,7 @@ export default async function PaginaEditarPedido({ params }: Props) {
   // Solo se puede editar si es borrador y pertenece al comprador
   const { data: pedido } = await supabase
     .from('pedidos')
-    .select('*')
+    .select('*, obra_id')
     .eq('id', id)
     .eq('comprador_id', user.id)
     .eq('estado', 'borrador')
@@ -42,8 +42,11 @@ export default async function PaginaEditarPedido({ params }: Props) {
   return (
     <div className="max-w-3xl mx-auto">
       <div className="mb-6">
-        <Link href={`/comprador/pedidos/${id}`} className="text-sm text-on-surface-variant hover:text-on-surface">
-          ← Volver al pedido
+        <Link
+          href={`/comprador/obras/${pedido.obra_id}/licitaciones/${id}`}
+          className="text-sm text-on-surface-variant hover:text-on-surface"
+        >
+          ← Volver a la licitación
         </Link>
         <h1 className="text-2xl font-bold text-on-surface mt-2">Editar pedido</h1>
         <p className="text-sm text-on-surface-variant mt-1">
@@ -54,11 +57,13 @@ export default async function PaginaEditarPedido({ params }: Props) {
       <FormularioNuevoPedido
         familias={catalogo as FamiliaProducto[]}
         pedidoId={id}
+        obraId={pedido.obra_id}
         datosIniciales={{
           titulo: pedido.titulo,
           descripcion: pedido.descripcion ?? '',
           direccion_entrega: pedido.direccion_entrega,
           fecha_entrega: pedido.fecha_entrega,
+          fecha_cierre_cotizaciones: pedido.fecha_cierre_cotizaciones ?? '',
         }}
         lineasIniciales={lineasIniciales}
       />

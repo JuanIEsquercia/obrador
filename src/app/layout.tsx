@@ -5,8 +5,19 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Obrador — Marketplace B2B de Construcción',
+  title: {
+    template: '%s | Obrador',
+    default: 'Obrador — Marketplace B2B de Construcción',
+  },
   description: 'Publicá tu lista de materiales, recibí cotizaciones de los mejores proveedores de Corrientes y elegí el mejor precio. Sin llamadas, sin vueltas.',
+  openGraph: {
+    title: 'Obrador — Marketplace B2B de Construcción',
+    description: 'El primer marketplace de materiales de construcción en Corrientes. Ahorrá tiempo y dinero en tu obra.',
+    url: 'https://obrador.com.ar',
+    siteName: 'Obrador',
+    locale: 'es_AR',
+    type: 'website',
+  },
 }
 
 export default function LayoutRaiz({ children }: { children: React.ReactNode }) {

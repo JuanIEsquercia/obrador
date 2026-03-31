@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { crearClienteNavegador } from '@/lib/supabase/cliente'
 import type { Pedido } from '@/types'
 
-export default function AccionesPedido({ pedido }: { pedido: Pedido }) {
+export default function AccionesPedido({ pedido }: { pedido: Pedido & { obra_id: string } }) {
   const router = useRouter()
   const [supabase] = useState(() => crearClienteNavegador())
   const [cargando, setCargando] = useState(false)
@@ -49,7 +49,7 @@ export default function AccionesPedido({ pedido }: { pedido: Pedido }) {
       return
     }
 
-    router.push('/comprador/pedidos')
+    router.push(`/comprador/obras/${pedido.obra_id}`)
     router.refresh()
   }
 

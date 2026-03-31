@@ -37,18 +37,22 @@ export default function FormularioCotizacion({
     notas_pago: cotizacionExistente?.notas_pago ?? '',
   })
 
-  // { [linea_pedido_id]: { precio_unitario, cantidad_oferta, notas } }
+  // { [linea_pedido_id]: { ... } }
   const [precios, setPrecios] = useState<Record<string, {
     precio_unitario: string
     cantidad_oferta: string
+    marca_ofertada: string
+    variante_ofertada: string
     notas: string
   }>>(() => {
-    const inicial: Record<string, { precio_unitario: string; cantidad_oferta: string; notas: string }> = {}
+    const inicial: Record<string, { precio_unitario: string; cantidad_oferta: string; marca_ofertada: string; variante_ofertada: string; notas: string }> = {}
     lineas.forEach(linea => {
       const existente = cotizacionExistente?.lineas.find(lc => lc.linea_pedido_id === linea.id)
       inicial[linea.id] = {
         precio_unitario: existente?.precio_unitario?.toString() ?? '',
         cantidad_oferta: existente?.cantidad_oferta?.toString() ?? linea.cantidad.toString(),
+        marca_ofertada: existente?.marca_ofertada ?? '',
+        variante_ofertada: existente?.variante_ofertada ?? '',
         notas: existente?.notas ?? '',
       }
     })
@@ -78,15 +82,17 @@ export default function FormularioCotizacion({
     return precio > 0 && cantidad > 0 ? sum + precio * cantidad : sum
   }, 0)
 
+  // Computed: hay al menos un ítem con precio > 0
+  const hayPreciosValidos = lineasCotizables.some(l => {
+    const precio = parseFloat(precios[l.id]?.precio_unitario || '0')
+    return precio > 0
+  })
+
   async function enviarCotizacion(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
 
-    const algunPrecio = lineasCotizables.some(l => {
-      const p = precios[l.id]
-      return p?.precio_unitario && parseFloat(p.precio_unitario) > 0
-    })
-    if (!algunPrecio) {
+    if (!hayPreciosValidos) {
       setError('Tenés que completar al menos un precio para enviar la cotización.')
       return
     }
@@ -153,21 +159,28 @@ export default function FormularioCotizacion({
           linea_pedido_id: linea.id,
           precio_unitario: precio > 0 ? precio : null,
           cantidad_oferta: cantidad > 0 ? cantidad : null,
+          marca_ofertada: p?.marca_ofertada || null,
+          variante_ofertada: p?.variante_ofertada || null,
           notas: p?.notas || null,
         }
       })
       .filter(l => l.precio_unitario !== null)
 
-    if (lineasParaInsertar.length > 0) {
-      const { error: errLineas } = await supabase
-        .from('lineas_cotizacion')
-        .insert(lineasParaInsertar)
+    // Guardia final: nunca crear una cotización sin ítems
+    if (lineasParaInsertar.length === 0) {
+      setError('Tenés que completar al menos un precio para enviar la cotización.')
+      setCargando(false)
+      return
+    }
 
-      if (errLineas) {
-        setError('No se pudieron guardar los precios. Intentá de nuevo.')
-        setCargando(false)
-        return
-      }
+    const { error: errLineas } = await supabase
+      .from('lineas_cotizacion')
+      .insert(lineasParaInsertar)
+
+    if (errLineas) {
+      setError('No se pudieron guardar los precios. Intentá de nuevo.')
+      setCargando(false)
+      return
     }
 
     setExito(true)
@@ -315,15 +328,35 @@ export default function FormularioCotizacion({
                         </div>
                       </div>
 
-                      {/* Notas del ítem */}
-                      <div className="mt-2">
-                        <input
-                          type="text"
-                          className="input text-xs text-on-surface-variant"
-                          placeholder="Notas del ítem: marca, variante, condición especial... (opcional)"
-                          value={p?.notas ?? ''}
-                          onChange={e => actualizarPrecio(linea.id, 'notas', e.target.value)}
-                        />
+                      {/* Detalles adicionales de la oferta */}
+                      <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div>
+                          <input
+                            type="text"
+                            className="input text-xs text-on-surface-variant font-medium"
+                            placeholder="Marca que entregás (ej: Loma Negra)"
+                            value={p?.marca_ofertada ?? ''}
+                            onChange={e => actualizarPrecio(linea.id, 'marca_ofertada', e.target.value)}
+                          />
+                        </div>
+                        <div>
+                          <input
+                            type="text"
+                            className="input text-xs text-on-surface-variant"
+                            placeholder="Aclaración formato (ej: Bolsa 25kg)"
+                            value={p?.variante_ofertada ?? ''}
+                            onChange={e => actualizarPrecio(linea.id, 'variante_ofertada', e.target.value)}
+                          />
+                        </div>
+                        <div>
+                          <input
+                            type="text"
+                            className="input text-xs text-on-surface-variant"
+                            placeholder="Notas adicionales (opcional)"
+                            value={p?.notas ?? ''}
+                            onChange={e => actualizarPrecio(linea.id, 'notas', e.target.value)}
+                          />
+                        </div>
                       </div>
                     </div>
                   )
@@ -417,16 +450,26 @@ export default function FormularioCotizacion({
       </div>
 
       {error && (
-        <div className="rounded-xl bg-error-container/50 border border-error/20 px-4 py-3 text-sm text-error">
+        <div className="rounded-xl bg-error-container/50 border border-error/20 px-4 py-3 text-sm text-error flex items-start gap-2">
+          <span className="material-symbols-outlined text-base flex-shrink-0 mt-0.5">error</span>
           {error}
         </div>
       )}
 
       <div className="flex gap-3 justify-end pb-4">
+        {!hayPreciosValidos && !cargando && (
+          <p className="text-xs text-on-surface-variant self-center mr-auto">
+            Completá al menos un precio para poder enviar.
+          </p>
+        )}
         <Link href="/vendedor/pedidos" className="btn-secundario">
           Cancelar
         </Link>
-        <button type="submit" disabled={cargando} className="btn-primario">
+        <button
+          type="submit"
+          disabled={cargando || !hayPreciosValidos}
+          className="btn-primario"
+        >
           {cargando
             ? 'Enviando...'
             : yaCotizo

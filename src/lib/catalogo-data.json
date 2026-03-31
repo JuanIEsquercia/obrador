@@ -1,0 +1,822 @@
+{
+  "Hierros": {
+    "Hierro redondo": [
+      {
+        "variante": "Ø 6mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 8mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 10mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 12mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 16mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 20mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 25mm - barra 12m",
+        "unidad": "barra"
+      }
+    ],
+    "Hierro cuadrado": [
+      {
+        "variante": "10x10mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "12x12mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "16x16mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "20x20mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "25x25mm - barra 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Perfil L (ángulo)": [
+      {
+        "variante": "25x25x3mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "30x30x3mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "40x40x4mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "50x50x5mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "60x60x6mm - barra 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Perfil U (canal)": [
+      {
+        "variante": "40x20x3mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "60x30x3mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "80x40x4mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "100x50x4mm - barra 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Perfil H (doble T)": [
+      {
+        "variante": "100x100mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "120x120mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "160x160mm - barra 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Caño estructural cuadrado": [
+      {
+        "variante": "40x40x2mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "50x50x2mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "60x60x3mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "80x80x3mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "100x100x4mm - barra 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Caño estructural rectangular": [
+      {
+        "variante": "40x20x2mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "60x40x2mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "80x40x3mm - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "100x50x3mm - barra 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Malla electrosoldada": [
+      {
+        "variante": "Ø 4",
+        "unidad": "2mm - 15x15 - 2.15x5m"
+      },
+      {
+        "variante": "Ø 4",
+        "unidad": "2mm - 15x15 - 2.15x6m"
+      },
+      {
+        "variante": "Ø 5mm - 15x15 - 2.15x5m",
+        "unidad": "paño"
+      },
+      {
+        "variante": "Ø 5mm - 15x15 - 2.15x6m",
+        "unidad": "paño"
+      },
+      {
+        "variante": "Ø 6mm - 15x15 - 2.15x6m",
+        "unidad": "paño"
+      }
+    ],
+    "Chapa lisa galvanizada": [
+      {
+        "variante": "N°26 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "N°24 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "N°22 - 1x2m",
+        "unidad": "chapa"
+      }
+    ],
+    "Chapa acanalada galvanizada": [
+      {
+        "variante": "N°26 - 0.76x3m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "N°26 - 0.76x4m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "N°26 - 0.76x6m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "N°24 - 0.76x3m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "N°24 - 0.76x6m",
+        "unidad": "chapa"
+      }
+    ],
+    "Alambre negro recocido": [
+      {
+        "variante": "N°16 - rollo 25kg",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "N°18 - rollo 25kg",
+        "unidad": "rollo"
+      }
+    ],
+    "Alambre galvanizado": [
+      {
+        "variante": "N°14 - rollo 25kg",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "N°16 - rollo 25kg",
+        "unidad": "rollo"
+      }
+    ]
+  },
+  "Cemento": {
+    "Cemento portland normal": [
+      {
+        "variante": "Bolsa 50kg",
+        "unidad": "bolsa"
+      },
+      {
+        "variante": "Bolsa 25kg",
+        "unidad": "bolsa"
+      },
+      {
+        "variante": "A granel",
+        "unidad": "tonelada"
+      }
+    ],
+    "Cemento de albañilería": [
+      {
+        "variante": "Bolsa 50kg",
+        "unidad": "bolsa"
+      },
+      {
+        "variante": "Bolsa 25kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Cemento blanco": [
+      {
+        "variante": "Bolsa 50kg",
+        "unidad": "bolsa"
+      },
+      {
+        "variante": "Bolsa 25kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Cal hidráulica": [
+      {
+        "variante": "Bolsa 50kg",
+        "unidad": "bolsa"
+      },
+      {
+        "variante": "Bolsa 25kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Cal en pasta": [
+      {
+        "variante": "Bolsa 50kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Cal aérea apagada": [
+      {
+        "variante": "Bolsa 25kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Yeso": [
+      {
+        "variante": "Bolsa 40kg",
+        "unidad": "bolsa"
+      },
+      {
+        "variante": "Bolsa 20kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Hidrófugo líquido": [
+      {
+        "variante": "Bidón 5L",
+        "unidad": "bidón"
+      },
+      {
+        "variante": "Bidón 20L",
+        "unidad": "bidón"
+      }
+    ],
+    "Acelerante de fraguado": [
+      {
+        "variante": "Bidón 5L",
+        "unidad": "bidón"
+      }
+    ]
+  },
+  "Ladrillos": {
+    "Ladrillo hueco": [
+      {
+        "variante": "8x18x33cm",
+        "unidad": "millar"
+      },
+      {
+        "variante": "12x18x33cm",
+        "unidad": "millar"
+      },
+      {
+        "variante": "18x18x33cm",
+        "unidad": "millar"
+      },
+      {
+        "variante": "8x18x33cm",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "12x18x33cm",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "18x18x33cm",
+        "unidad": "unidad"
+      }
+    ],
+    "Ladrillo macizo": [
+      {
+        "variante": "5.5x12x24cm",
+        "unidad": "millar"
+      },
+      {
+        "variante": "5.5x12x24cm",
+        "unidad": "unidad"
+      }
+    ],
+    "Ladrillo de campo": [
+      {
+        "variante": "Estándar",
+        "unidad": "millar"
+      },
+      {
+        "variante": "Estándar",
+        "unidad": "unidad"
+      }
+    ],
+    "Bloque de hormigón": [
+      {
+        "variante": "19x19x39cm",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "14x19x39cm",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "9x19x39cm",
+        "unidad": "unidad"
+      }
+    ],
+    "Adoquín de hormigón": [
+      {
+        "variante": "20x10x6cm",
+        "unidad": "m2"
+      },
+      {
+        "variante": "20x10x8cm",
+        "unidad": "m2"
+      }
+    ],
+    "Piedra laja": [
+      {
+        "variante": "Natural irregular",
+        "unidad": "m2"
+      }
+    ]
+  },
+  "Arena": {
+    "Arena fina": [
+      {
+        "variante": "Suelta - entrega a granel",
+        "unidad": "m3"
+      },
+      {
+        "variante": "Bolsa 50kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Arena gruesa": [
+      {
+        "variante": "Suelta - entrega a granel",
+        "unidad": "m3"
+      },
+      {
+        "variante": "Bolsa 50kg",
+        "unidad": "bolsa"
+      }
+    ],
+    "Arena media": [
+      {
+        "variante": "Suelta - entrega a granel",
+        "unidad": "m3"
+      }
+    ],
+    "Piedra partida": [
+      {
+        "variante": "Tamaño 6mm - a granel",
+        "unidad": "m3"
+      },
+      {
+        "variante": "Tamaño 19mm - a granel",
+        "unidad": "m3"
+      },
+      {
+        "variante": "Tamaño 25mm - a granel",
+        "unidad": "m3"
+      },
+      {
+        "variante": "Tamaño 38mm - a granel",
+        "unidad": "m3"
+      }
+    ],
+    "Granza": [
+      {
+        "variante": "A granel",
+        "unidad": "m3"
+      }
+    ],
+    "Tosca": [
+      {
+        "variante": "A granel",
+        "unidad": "m3"
+      }
+    ],
+    "Ripio": [
+      {
+        "variante": "A granel",
+        "unidad": "m3"
+      }
+    ],
+    "Suelo seleccionado": [
+      {
+        "variante": "A granel",
+        "unidad": "m3"
+      }
+    ]
+  },
+  "Sanitarios": {
+    "Caño PVC cloacal": [
+      {
+        "variante": "Ø 50mm - 3m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 75mm - 3m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 110mm - 3m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 160mm - 3m",
+        "unidad": "barra"
+      }
+    ],
+    "Caño PVC pluvial": [
+      {
+        "variante": "Ø 75mm - 3m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 110mm - 3m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 160mm - 3m",
+        "unidad": "barra"
+      }
+    ],
+    "Caño PVC presión": [
+      {
+        "variante": "Ø 25mm - 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 32mm - 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 40mm - 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 50mm - 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Caño polietileno baja densidad": [
+      {
+        "variante": "Ø 25mm - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Ø 32mm - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Ø 50mm - rollo 50m",
+        "unidad": "rollo"
+      }
+    ],
+    "Caño hierro galvanizado": [
+      {
+        "variante": "Ø 1/2\" - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 3/4\" - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 1\" - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 1 1/2\" - barra 6m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 2\" - barra 6m",
+        "unidad": "barra"
+      }
+    ],
+    "Codo PVC 90°": [
+      {
+        "variante": "Ø 50mm cloacal",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Ø 75mm cloacal",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Ø 110mm cloacal",
+        "unidad": "unidad"
+      }
+    ],
+    "Codo PVC 45°": [
+      {
+        "variante": "Ø 50mm cloacal",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Ø 110mm cloacal",
+        "unidad": "unidad"
+      }
+    ],
+    "Unión PVC": [
+      {
+        "variante": "Ø 25mm presión",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Ø 32mm presión",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Ø 50mm presión",
+        "unidad": "unidad"
+      }
+    ],
+    "Caño corrugado eléctrico": [
+      {
+        "variante": "Ø 25mm - rollo 50m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Ø 32mm - rollo 25m",
+        "unidad": "rollo"
+      }
+    ],
+    "Caño semipesado eléctrico": [
+      {
+        "variante": "Ø 25mm - barra 3m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Ø 32mm - barra 3m",
+        "unidad": "barra"
+      }
+    ]
+  },
+  "Eléctrico": {
+    "Cable unipolar": [
+      {
+        "variante": "1mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "1.5mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "2.5mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "4mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "6mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "10mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "16mm² - rollo 50m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "25mm² - rollo 50m",
+        "unidad": "rollo"
+      }
+    ],
+    "Cable bipolar (mellizo)": [
+      {
+        "variante": "2x1mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "2x1.5mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "2x2.5mm² - rollo 100m",
+        "unidad": "rollo"
+      }
+    ],
+    "Cable manguera": [
+      {
+        "variante": "2x1.5mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "2x2.5mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "3x2.5mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "3x4mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "3x6mm² - rollo 50m",
+        "unidad": "rollo"
+      }
+    ],
+    "Cable subterráneo": [
+      {
+        "variante": "2x4mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "2x6mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "3x4mm² - rollo 100m",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "3x6mm² - rollo 100m",
+        "unidad": "rollo"
+      }
+    ],
+    "Disyuntor termomagnético": [
+      {
+        "variante": "1x10A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "1x16A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "1x20A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "1x25A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "1x32A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "2x16A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "2x20A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "2x25A",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "2x32A",
+        "unidad": "unidad"
+      }
+    ],
+    "Disyuntor diferencial": [
+      {
+        "variante": "2x25A 30mA",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "2x40A 30mA",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "4x25A 30mA",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "4x40A 30mA",
+        "unidad": "unidad"
+      }
+    ],
+    "Tablero eléctrico": [
+      {
+        "variante": "4 bocas riel DIN",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "8 bocas riel DIN",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "12 bocas riel DIN",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "16 bocas riel DIN",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "24 bocas riel DIN",
+        "unidad": "unidad"
+      }
+    ],
+    "Caja de paso": [
+      {
+        "variante": "10x10cm plástica",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "15x15cm plástica",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "20x20cm plástica",
+        "unidad": "unidad"
+      }
+    ],
+    "Caja rectangular embutir": [
+      {
+        "variante": "Standard IRAM",
+        "unidad": "unidad"
+      }
+    ],
+    "Tomacorriente": [
+      {
+        "variante": "2P+T 10A IRAM",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "2P+T 20A IRAM",
+        "unidad": "unidad"
+      }
+    ],
+    "Llave simple": [
+      {
+        "variante": "10A",
+        "unidad": "unidad"
+      }
+    ],
+    "Llave doble": [
+      {
+        "variante": "10A",
+        "unidad": "unidad"
+      }
+    ],
+    "Llave triple": [
+      {
+        "variante": "10A",
+        "unidad": "unidad"
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
 import { crearClienteServidor } from '@/lib/supabase/servidor'
-import { formatearFecha } from '@/lib/utils'
+import { formatearFecha, diasRestantes } from '@/lib/utils'
 import FormularioCotizacion from './formulario-cotizacion'
 import type { LineaPedido, Cotizacion, LineaCotizacion, FamiliaProducto } from '@/types'
 
@@ -16,12 +16,12 @@ export default async function PaginaCotizarPedido({ params }: Props) {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
 
-  // Traer pedido publicado
+  // Traer pedido (publicado o cerrado — el vendedor puede ver ambos si cotizó)
   const { data: pedido } = await supabase
     .from('pedidos')
-    .select('*, comprador:perfiles(nombre, empresa)')
+    .select('*, comprador:perfiles(nombre, empresa, telefono)')
     .eq('id', id)
-    .eq('estado', 'publicado')
+    .in('estado', ['publicado', 'cerrado'])
     .single()
 
   if (!pedido) notFound()
@@ -56,14 +56,24 @@ export default async function PaginaCotizarPedido({ params }: Props) {
     ).entries()
   )
 
-  const comprador = pedido.comprador as { nombre: string; empresa: string }
+  const comprador = pedido.comprador as { nombre: string; empresa: string; telefono: string | null }
+  const esCerrado = pedido.estado === 'cerrado'
+  const esGanador = cotizacionExistente?.ganadora === true
+
+  const diasParaCierre = pedido.fecha_cierre_cotizaciones
+    ? diasRestantes(pedido.fecha_cierre_cotizaciones)
+    : null
+  const plazoVencido = diasParaCierre !== null && diasParaCierre < 0
 
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-6">
-        <Link href="/vendedor/pedidos" className="text-sm text-on-surface-variant hover:text-on-surface">
-          ← Pedidos disponibles
+        <Link
+          href={esCerrado ? '/vendedor/cotizaciones' : '/vendedor/pedidos'}
+          className="text-sm text-on-surface-variant hover:text-on-surface"
+        >
+          ← {esCerrado ? 'Mis cotizaciones' : 'Pedidos disponibles'}
         </Link>
 
         <div className="mt-2">
@@ -79,6 +89,76 @@ export default async function PaginaCotizarPedido({ params }: Props) {
             </p>
           )}
         </div>
+
+        {/* Banner de plazo de cotización */}
+        {!esCerrado && pedido.fecha_cierre_cotizaciones && (
+          <div className={`mt-3 px-4 py-3 rounded-2xl flex items-center gap-3 ${
+            plazoVencido
+              ? 'bg-error-container/40 border border-error/20'
+              : diasParaCierre! <= 2
+                ? 'bg-tertiary-container/40 border border-tertiary/20'
+                : 'bg-surface-container border border-outline-variant/30'
+          }`}>
+            <span className={`material-symbols-outlined flex-shrink-0 ${
+              plazoVencido ? 'text-error' : diasParaCierre! <= 2 ? 'text-tertiary' : 'text-primary'
+            }`}>
+              schedule
+            </span>
+            <div>
+              {plazoVencido ? (
+                <>
+                  <p className="text-sm font-bold text-error">Plazo de cotización vencido</p>
+                  <p className="text-xs text-on-surface-variant">
+                    El período de cotización cerró el {formatearFecha(pedido.fecha_cierre_cotizaciones)}
+                  </p>
+                </>
+              ) : diasParaCierre === 0 ? (
+                <>
+                  <p className="text-sm font-bold text-on-surface">Último día para cotizar</p>
+                  <p className="text-xs text-on-surface-variant">
+                    El período cierra hoy · {formatearFecha(pedido.fecha_cierre_cotizaciones)}
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="text-sm font-bold text-on-surface">
+                    Podés cotizar hasta el {formatearFecha(pedido.fecha_cierre_cotizaciones)}
+                  </p>
+                  <p className="text-xs text-on-surface-variant">
+                    {diasParaCierre === 1
+                      ? 'Queda 1 día para enviar tu oferta'
+                      : `Quedan ${diasParaCierre} días para enviar tu oferta`}
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Banner ganador con datos de contacto */}
+        {esGanador && (
+          <div className="mt-4 p-4 bg-primary-fixed/30 border-2 border-primary rounded-2xl flex items-start gap-3">
+            <span className="material-symbols-outlined icon-fill text-primary text-2xl flex-shrink-0 mt-0.5">emoji_events</span>
+            <div>
+              <p className="font-bold text-primary">¡Ganaste esta licitación!</p>
+              <p className="text-sm text-on-surface mt-0.5">
+                Contactate con <strong>{comprador.nombre}</strong> de {comprador.empresa} para coordinar la entrega.
+              </p>
+              {comprador.telefono && (
+                <a
+                  href={`tel:${comprador.telefono}`}
+                  className="inline-flex items-center gap-1.5 mt-2 text-sm font-semibold text-primary hover:underline"
+                >
+                  <span className="material-symbols-outlined text-base">phone</span>
+                  {comprador.telefono}
+                </a>
+              )}
+              {!comprador.telefono && (
+                <p className="text-xs text-on-surface-variant mt-1">El comprador no registró teléfono de contacto.</p>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Resumen del pedido */}

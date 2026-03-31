@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { crearClienteServidor } from '@/lib/supabase/servidor'
-import { formatearFecha } from '@/lib/utils'
+import { formatearFecha, diasRestantes } from '@/lib/utils'
 import type { Pedido, FamiliaProducto } from '@/types'
 
 export default async function PaginaPedidosDisponibles() {
@@ -76,6 +76,11 @@ export default async function PaginaPedidosDisponibles() {
               new Map(pedido.lineas.map(l => [l.familia_id, l.familia])).values()
             ).filter(Boolean)
 
+            const diasCierre = pedido.fecha_cierre_cotizaciones
+              ? diasRestantes(pedido.fecha_cierre_cotizaciones)
+              : null
+            const plazoUrgente = diasCierre !== null && diasCierre <= 2 && diasCierre >= 0
+
             return (
               <div key={pedido.id} className="tarjeta">
                 <div className="flex items-start justify-between gap-4">
@@ -85,12 +90,20 @@ export default async function PaginaPedidosDisponibles() {
                       {yaCotice && (
                         <span className="badge bg-primary-fixed text-primary text-xs">✓ Cotizado</span>
                       )}
+                      {plazoUrgente && !yaCotice && (
+                        <span className="badge bg-tertiary-container text-on-tertiary-container text-xs">
+                          ⚡ {diasCierre === 0 ? 'Cierra hoy' : `${diasCierre}d restantes`}
+                        </span>
+                      )}
                     </div>
                     <p className="text-sm text-on-surface-variant mb-2">
                       {pedido.comprador.empresa}
                     </p>
                     <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-on-surface-variant mb-3">
                       <span>📍 {pedido.direccion_entrega}</span>
+                      {pedido.fecha_cierre_cotizaciones && (
+                        <span>⏰ Cotizá hasta: {formatearFecha(pedido.fecha_cierre_cotizaciones)}</span>
+                      )}
                       <span>📅 Entrega: {formatearFecha(pedido.fecha_entrega)}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">

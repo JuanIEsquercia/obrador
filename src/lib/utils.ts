@@ -40,6 +40,15 @@ export function calcularTotalCotizacion(
   }, 0)
 }
 
+// Días restantes hasta una fecha (negativo = vencido)
+export function diasRestantes(fecha: string): number {
+  const hoy = new Date()
+  hoy.setHours(0, 0, 0, 0)
+  const objetivo = parseISO(fecha)
+  objetivo.setHours(0, 0, 0, 0)
+  return Math.round((objetivo.getTime() - hoy.getTime()) / (1000 * 60 * 60 * 24))
+}
+
 // Badge de estado del pedido
 export function textoEstadoPedido(estado: string): string {
   const estados: Record<string, string> = {
