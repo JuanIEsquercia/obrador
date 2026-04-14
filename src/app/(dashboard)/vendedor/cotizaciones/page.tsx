@@ -1,13 +1,15 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
+import { crearClienteServidor, obtenerUsuario } from '@/lib/supabase/servidor'
 import { formatearFecha, formatearPrecio } from '@/lib/utils'
 
-export default async function PaginaMisCotizaciones() {
-  const supabase = await crearClienteServidor()
+export const metadata = { title: 'Mis Cotizaciones' }
 
-  const { data: { user } } = await supabase.auth.getUser()
+export default async function PaginaMisCotizaciones() {
+  const user = await obtenerUsuario()
   if (!user) redirect('/login')
+
+  const supabase = await crearClienteServidor()
 
   const { data: cotizaciones, error: errorCotizaciones } = await supabase
     .from('cotizaciones')

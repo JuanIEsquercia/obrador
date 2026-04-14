@@ -1,0 +1,84 @@
+{
+  "Cemento portland normal": [
+    {
+      "variante": "Bolsa 50kg",
+      "unidad": "bolsa"
+    },
+    {
+      "variante": "Bolsa 25kg",
+      "unidad": "bolsa"
+    },
+    {
+      "variante": "A granel",
+      "unidad": "tonelada"
+    }
+  ],
+  "Cemento de albañilería": [
+    {
+      "variante": "Bolsa 50kg",
+      "unidad": "bolsa"
+    },
+    {
+      "variante": "Bolsa 25kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Cemento blanco": [
+    {
+      "variante": "Bolsa 50kg",
+      "unidad": "bolsa"
+    },
+    {
+      "variante": "Bolsa 25kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Cal hidráulica": [
+    {
+      "variante": "Bolsa 50kg",
+      "unidad": "bolsa"
+    },
+    {
+      "variante": "Bolsa 25kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Cal en pasta": [
+    {
+      "variante": "Bolsa 50kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Cal aérea apagada": [
+    {
+      "variante": "Bolsa 25kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Yeso": [
+    {
+      "variante": "Bolsa 40kg",
+      "unidad": "bolsa"
+    },
+    {
+      "variante": "Bolsa 20kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Hidrófugo líquido": [
+    {
+      "variante": "Bidón 5L",
+      "unidad": "bidón"
+    },
+    {
+      "variante": "Bidón 20L",
+      "unidad": "bidón"
+    }
+  ],
+  "Acelerante de fraguado": [
+    {
+      "variante": "Bidón 5L",
+      "unidad": "bidón"
+    }
+  ]
+}

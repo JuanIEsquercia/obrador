@@ -1,11 +1,18 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
+import { crearClienteServidor, obtenerUsuario } from '@/lib/supabase/servidor'
 import { formatearFecha, formatearPrecio, colorEstadoPedido, textoEstadoPedido } from '@/lib/utils'
 import type { Pedido, ConsolidadoFamilia, ConsolidadoLicitacion } from '@/types'
 
 interface Props {
   params: Promise<{ id: string }>
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params
+  const supabase = await crearClienteServidor()
+  const { data } = await supabase.from('obras').select('nombre').eq('id', id).single()
+  return { title: data?.nombre ?? 'Detalle de Obra' }
 }
 
 const BADGE_OBRA = {
@@ -15,10 +22,10 @@ const BADGE_OBRA = {
 
 export default async function PaginaDetalleObra({ params }: Props) {
   const { id } = await params
-  const supabase = await crearClienteServidor()
-
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await obtenerUsuario()
   if (!user) redirect('/login')
+
+  const supabase = await crearClienteServidor()
 
   // Obra + licitaciones en paralelo
   const [{ data: obra }, { data: licitacionesData }] = await Promise.all([

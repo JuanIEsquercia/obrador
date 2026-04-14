@@ -1,22 +1,16 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { Suspense } from 'react'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
+import { obtenerUsuario, obtenerPerfil } from '@/lib/supabase/servidor'
 import { EstadisticasObras, SkeletonEstadisticasObras } from './componentes/estadisticas-obras'
 import { ObrasRecientes, SkeletonObrasRecientes } from './componentes/obras-recientes'
 
+export const metadata = { title: 'Panel de Control' }
+
 export default async function PanelComprador() {
-  const supabase = await crearClienteServidor()
-
-  const { data: { user } } = await supabase.auth.getUser()
+  // Ambas funciones están cacheadas — el layout ya las llamó, no hay queries extra.
+  const [user, perfil] = await Promise.all([obtenerUsuario(), obtenerPerfil()])
   if (!user) redirect('/login')
-
-  // Obtener solo el perfil para el saludo de forma bloqueante rápida
-  const { data: perfil } = await supabase
-    .from('perfiles')
-    .select('nombre')
-    .eq('id', user.id)
-    .single()
 
   const primerNombre = perfil?.nombre.split(' ')[0] ?? 'Usuario'
 

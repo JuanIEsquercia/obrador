@@ -1,23 +1,19 @@
 import { redirect } from 'next/navigation'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
+import { obtenerUsuario, obtenerPerfil } from '@/lib/supabase/servidor'
 import NavegacionPrincipal from '@/components/ui/navegacion-principal'
 import type { RolUsuario } from '@/types'
 
 export default async function LayoutDashboard({ children }: { children: React.ReactNode }) {
-  const supabase = await crearClienteServidor()
-
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await obtenerUsuario()
   if (!user) redirect('/login')
 
   // El rol viene del JWT (user_metadata) — es confiable y no requiere query extra.
   // nombre y empresa sí vienen de la DB porque pueden actualizarse post-registro.
   const rol = (user.user_metadata?.rol ?? 'comprador') as RolUsuario
 
-  const { data: perfil } = await supabase
-    .from('perfiles')
-    .select('nombre, empresa')
-    .eq('id', user.id)
-    .single()
+  // obtenerPerfil() está cacheada: si la page del mismo render ya la llamó,
+  // no genera una segunda query a la DB.
+  const perfil = await obtenerPerfil()
 
   const nombre = perfil?.nombre ?? user.user_metadata?.nombre ?? ''
   const empresa = perfil?.empresa ?? user.user_metadata?.empresa ?? ''

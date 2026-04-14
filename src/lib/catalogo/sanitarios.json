@@ -1,0 +1,146 @@
+{
+  "Caño PVC cloacal": [
+    {
+      "variante": "Ø 50mm - 3m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 75mm - 3m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 110mm - 3m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 160mm - 3m",
+      "unidad": "barra"
+    }
+  ],
+  "Caño PVC pluvial": [
+    {
+      "variante": "Ø 75mm - 3m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 110mm - 3m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 160mm - 3m",
+      "unidad": "barra"
+    }
+  ],
+  "Caño PVC presión": [
+    {
+      "variante": "Ø 25mm - 6m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 32mm - 6m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 40mm - 6m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 50mm - 6m",
+      "unidad": "barra"
+    }
+  ],
+  "Caño polietileno baja densidad": [
+    {
+      "variante": "Ø 25mm - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "Ø 32mm - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "Ø 50mm - rollo 50m",
+      "unidad": "rollo"
+    }
+  ],
+  "Caño hierro galvanizado": [
+    {
+      "variante": "Ø 1/2\" - barra 6m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 3/4\" - barra 6m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 1\" - barra 6m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 1 1/2\" - barra 6m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 2\" - barra 6m",
+      "unidad": "barra"
+    }
+  ],
+  "Codo PVC 90°": [
+    {
+      "variante": "Ø 50mm cloacal",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "Ø 75mm cloacal",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "Ø 110mm cloacal",
+      "unidad": "unidad"
+    }
+  ],
+  "Codo PVC 45°": [
+    {
+      "variante": "Ø 50mm cloacal",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "Ø 110mm cloacal",
+      "unidad": "unidad"
+    }
+  ],
+  "Unión PVC": [
+    {
+      "variante": "Ø 25mm presión",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "Ø 32mm presión",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "Ø 50mm presión",
+      "unidad": "unidad"
+    }
+  ],
+  "Caño corrugado eléctrico": [
+    {
+      "variante": "Ø 25mm - rollo 50m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "Ø 32mm - rollo 25m",
+      "unidad": "rollo"
+    }
+  ],
+  "Caño semipesado eléctrico": [
+    {
+      "variante": "Ø 25mm - barra 3m",
+      "unidad": "barra"
+    },
+    {
+      "variante": "Ø 32mm - barra 3m",
+      "unidad": "barra"
+    }
+  ]
+}

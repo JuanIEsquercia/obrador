@@ -1,39 +1,39 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
+import { crearClienteServidor, obtenerUsuario } from '@/lib/supabase/servidor'
 import { formatearFecha, diasRestantes } from '@/lib/utils'
 import type { Pedido, FamiliaProducto } from '@/types'
 
-export default async function PaginaPedidosDisponibles() {
-  const supabase = await crearClienteServidor()
+export const metadata = { title: 'Pedidos Disponibles' }
 
-  const { data: { user } } = await supabase.auth.getUser()
+export default async function PaginaPedidosDisponibles() {
+  const user = await obtenerUsuario()
   if (!user) redirect('/login')
 
-  // Familias del vendedor
-  const { data: misF } = await supabase
-    .from('vendedor_familias')
-    .select('familia_id, familia:familias_producto(id, nombre)')
-    .eq('vendedor_id', user.id)
+  const supabase = await crearClienteServidor()
+
+  // Las 3 queries son independientes entre sí — se lanzan en paralelo
+  const [{ data: misF }, { data: pedidos }, { data: cotizados }] = await Promise.all([
+    supabase
+      .from('vendedor_familias')
+      .select('familia_id, familia:familias_producto(id, nombre)')
+      .eq('vendedor_id', user.id),
+    supabase
+      .from('pedidos')
+      .select(`
+        *,
+        comprador:perfiles(nombre, empresa),
+        lineas:lineas_pedido(familia_id, familia:familias_producto(nombre))
+      `)
+      .eq('estado', 'publicado')
+      .order('publicado_en', { ascending: false }),
+    supabase
+      .from('cotizaciones')
+      .select('pedido_id')
+      .eq('vendedor_id', user.id),
+  ])
 
   const misFamilias = (misF ?? []).map(f => f.familia as unknown as FamiliaProducto)
-
-  // Pedidos disponibles que matchean (RLS filtra por familias)
-  const { data: pedidos } = await supabase
-    .from('pedidos')
-    .select(`
-      *,
-      comprador:perfiles(nombre, empresa),
-      lineas:lineas_pedido(familia_id, familia:familias_producto(nombre))
-    `)
-    .eq('estado', 'publicado')
-    .order('publicado_en', { ascending: false })
-
-  // Pedidos ya cotizados por este vendedor
-  const { data: cotizados } = await supabase
-    .from('cotizaciones')
-    .select('pedido_id')
-    .eq('vendedor_id', user.id)
 
   const pedidosCotizados = new Set((cotizados ?? []).map(c => c.pedido_id))
 

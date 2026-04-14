@@ -24,6 +24,9 @@ export default function LayoutRaiz({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es-AR" className={inter.variable}>
       <head>
+        {/* Preconnect a Google Fonts para reducir latencia al cargar Material Symbols */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Material Symbols Outlined — íconos de Google */}
         <link
           rel="stylesheet"

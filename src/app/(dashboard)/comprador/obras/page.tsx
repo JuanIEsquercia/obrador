@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
+import { crearClienteServidor, obtenerUsuario } from '@/lib/supabase/servidor'
 import type { Obra } from '@/types'
+
+export const metadata = { title: 'Mis Obras' }
 
 const BADGE_ESTADO = {
   activa:    { label: 'Activa',    clase: 'bg-primary-fixed text-primary' },
@@ -9,10 +11,10 @@ const BADGE_ESTADO = {
 }
 
 export default async function PaginaMisObras() {
-  const supabase = await crearClienteServidor()
-
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await obtenerUsuario()
   if (!user) redirect('/login')
+
+  const supabase = await crearClienteServidor()
 
   // Obras con conteo de licitaciones
   const { data: obras } = await supabase

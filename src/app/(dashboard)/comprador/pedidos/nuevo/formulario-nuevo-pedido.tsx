@@ -1,12 +1,23 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { crearClienteNavegador } from '@/lib/supabase/cliente'
-import catalogoDataJSON from '@/lib/catalogo-data.json'
+import { ComboboxMaterial } from './combobox-material'
 import type { FamiliaProducto, ItemLineaPedido } from '@/types'
 
-const catalogoDb = catalogoDataJSON as Record<string, Record<string, Array<{ variante: string, unidad: string }>>>
+type DatosFamilia = Record<string, Array<{ variante: string; unidad: string }>>
+
+// Importaciones explícitas para que el bundler las analice estáticamente
+const IMPORTADORES: Record<string, () => Promise<{ default: DatosFamilia }>> = {
+  Hierros:    () => import('@/lib/catalogo/hierros.json'),
+  Cemento:    () => import('@/lib/catalogo/cemento.json'),
+  Ladrillos:  () => import('@/lib/catalogo/ladrillos.json'),
+  Arena:      () => import('@/lib/catalogo/arena.json'),
+  Sanitarios: () => import('@/lib/catalogo/sanitarios.json'),
+  Eléctrico:  () => import('@/lib/catalogo/electrico.json'),
+}
+
 const UNIDADES = ['unidades', 'kg', 'bolsas', 'm²', 'm³', 'm', 'litros', 'chapas', 'rollos', 'juegos', 'otros']
 
 interface DatosIniciales {
@@ -40,6 +51,15 @@ export default function FormularioNuevoPedido({ familias, obraId, pedidoId, dato
   const [accionCargando, setAccionCargando] = useState<'borrador' | 'publicar' | null>(null)
   const cargando = accionCargando !== null
   const [error, setError] = useState<string | null>(null)
+  const [catalogos, setCatalogos] = useState<Record<string, DatosFamilia>>({})
+
+  const cargarCatalogo = useCallback(async (nombreFamilia: string) => {
+    if (catalogos[nombreFamilia] !== undefined) return
+    const importar = IMPORTADORES[nombreFamilia]
+    if (!importar) return
+    const mod = await importar()
+    setCatalogos(prev => ({ ...prev, [nombreFamilia]: mod.default }))
+  }, [catalogos])
 
   const modoEdicion = !!pedidoId
 
@@ -61,6 +81,8 @@ export default function FormularioNuevoPedido({ familias, obraId, pedidoId, dato
     if (familiaActiva !== familia_id) setFamiliaActiva(familia_id)
     const yaHay = lineas.some(l => l.familia_id === familia_id)
     if (!yaHay) setLineas(prev => [...prev, lineaVacia(familia_id)])
+    const nombre = familias.find(f => f.id === familia_id)?.nombre
+    if (nombre) cargarCatalogo(nombre)
   }
 
   function agregarItem(familia_id: number) {
@@ -320,7 +342,7 @@ export default function FormularioNuevoPedido({ familias, obraId, pedidoId, dato
                 .map((l, i) => ({ linea: l, index: i }))
                 .filter(({ linea }) => linea.familia_id === familia_id)
 
-              const dataFamilia = catalogoDb[familia?.nombre || ''] || {}
+              const dataFamilia = catalogos[familia?.nombre || ''] ?? {}
               const productos = Object.keys(dataFamilia)
 
               return (
@@ -344,36 +366,15 @@ export default function FormularioNuevoPedido({ familias, obraId, pedidoId, dato
                             <p className="text-xs text-on-surface-variant mb-1">Descripción</p>
                           )}
                           {productos.length > 0 ? (
-                            <select 
-                              className="input text-sm truncate"
+                            <ComboboxMaterial
+                              data={dataFamilia}
                               value={linea.descripcion}
-                              onChange={e => {
-                                const descMatch = e.target.value;
-                                actualizarLinea(index, 'descripcion', descMatch);
-                                // Autocompletar la unidad
-                                for (const p of productos) {
-                                  const match = dataFamilia[p].find(v => `${p} — ${v.variante}` === descMatch);
-                                  if (match) {
-                                    actualizarLinea(index, 'unidad', match.unidad);
-                                    break;
-                                  }
-                                }
+                              placeholder="Buscar material..."
+                              onChange={(desc, unidad) => {
+                                actualizarLinea(index, 'descripcion', desc)
+                                if (unidad) actualizarLinea(index, 'unidad', unidad)
                               }}
-                            >
-                              <option value="">Seleccionar material...</option>
-                              {productos.map(prod => (
-                                <optgroup key={prod} label={prod}>
-                                  {dataFamilia[prod].map(v => {
-                                    const labelStr = `${prod} — ${v.variante}`;
-                                    return (
-                                      <option key={labelStr} value={labelStr}>
-                                        {v.variante}
-                                      </option>
-                                    );
-                                  })}
-                                </optgroup>
-                              ))}
-                            </select>
+                            />
                           ) : (
                             <input type="text" className="input text-sm" placeholder="ej: Ladrillo hueco 18x18x33"
                               value={linea.descripcion} onChange={e => actualizarLinea(index, 'descripcion', e.target.value)} />

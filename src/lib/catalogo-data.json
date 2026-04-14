@@ -1,227 +1,1797 @@
 {
   "Hierros": {
-    "Hierro redondo": [
+    "Hierro DN corrugado": [
       {
-        "variante": "Ø 6mm - barra 12m",
+        "variante": "Varilla moldeada O 4mm",
         "unidad": "barra"
       },
       {
-        "variante": "Ø 8mm - barra 12m",
+        "variante": "Hierro DN O 6mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "Ø 10mm - barra 12m",
+        "variante": "Hierro DN O 8mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "Ø 12mm - barra 12m",
+        "variante": "Hierro DN O 10mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "Ø 16mm - barra 12m",
+        "variante": "Hierro DN O 12mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "Ø 20mm - barra 12m",
+        "variante": "Hierro DN O 16mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "Ø 25mm - barra 12m",
+        "variante": "Hierro DN O 20mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro DN O 25mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro DN O 32mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro DN O 6mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro DN O 8mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro DN O 16mm - barra 12m",
         "unidad": "barra"
       }
     ],
-    "Hierro cuadrado": [
+    "Hierro liso": [
       {
-        "variante": "10x10mm - barra 6m",
+        "variante": "Hierro liso O 6mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "12x12mm - barra 6m",
+        "variante": "Hierro liso O 8mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "16x16mm - barra 6m",
+        "variante": "Hierro liso O 10mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "20x20mm - barra 6m",
+        "variante": "Hierro liso O 12mm - barra 12m",
         "unidad": "barra"
       },
       {
-        "variante": "25x25mm - barra 6m",
+        "variante": "Hierro liso O 14mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 16mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 20mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 25mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 32mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 6mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 8mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 10mm - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro liso O 12mm - barra 12m",
         "unidad": "barra"
       }
     ],
-    "Perfil L (ángulo)": [
+    "Hierro cortado y doblado (CyD)": [
       {
-        "variante": "25x25x3mm - barra 6m",
+        "variante": "Hierro CyD DN O 6mm",
         "unidad": "barra"
       },
       {
-        "variante": "30x30x3mm - barra 6m",
+        "variante": "Hierro CyD DN O 8mm",
         "unidad": "barra"
       },
       {
-        "variante": "40x40x4mm - barra 6m",
+        "variante": "Hierro CyD DN O 10mm",
         "unidad": "barra"
       },
       {
-        "variante": "50x50x5mm - barra 6m",
+        "variante": "Hierro CyD DN O 12mm",
         "unidad": "barra"
       },
       {
-        "variante": "60x60x6mm - barra 6m",
+        "variante": "Hierro CyD DN O 16mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro CyD DN O 20mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro CyD DN O 25mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro CyD DN O 32mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Estribo O 6mm",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Estribo O 8mm",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Estribo O 10mm",
+        "unidad": "unidad"
+      },
+      {
+        "variante": "Kit estribos 12x12cm O 6mm x 20u",
+        "unidad": "kit"
+      },
+      {
+        "variante": "Kit estribos 15x15cm O 6mm x 20u",
+        "unidad": "kit"
+      }
+    ],
+    "Hierro cortado": [
+      {
+        "variante": "Hierro cortado DN O 6mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro cortado DN O 8mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro cortado DN O 10mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro cortado DN O 12mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro cortado DN O 16mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro cortado DN O 20mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro cortado DN O 25mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Hierro cortado DN O 32mm",
         "unidad": "barra"
       }
     ],
-    "Perfil U (canal)": [
+    "Hierro cuadrado / Redondo herrero": [
       {
-        "variante": "40x20x3mm - barra 6m",
+        "variante": "Cuadrado 5/16",
         "unidad": "barra"
       },
       {
-        "variante": "60x30x3mm - barra 6m",
+        "variante": "Cuadrado 3/8",
         "unidad": "barra"
       },
       {
-        "variante": "80x40x4mm - barra 6m",
+        "variante": "Cuadrado 7/16",
         "unidad": "barra"
       },
       {
-        "variante": "100x50x4mm - barra 6m",
+        "variante": "Cuadrado 1/2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cuadrado 9/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cuadrado 5/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cuadrado 3/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cuadrado 7/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cuadrado 1",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cuadrado 1 1/2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cuadrado 2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 1/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 5/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 3/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 7/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 1/2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 9/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 5/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 3/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 7/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Redondo herrero 1",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Trefilado N15 - barra 4m",
         "unidad": "barra"
       }
     ],
-    "Perfil H (doble T)": [
+    "Caño estructural redondo": [
       {
-        "variante": "100x100mm - barra 6m",
+        "variante": "Cano redondo 1/2\" - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "120x120mm - barra 6m",
+        "variante": "Cano redondo 5/8\" - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "160x160mm - barra 6m",
+        "variante": "Cano redondo 3/4\" - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 7/8\" - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1\" - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/4\" - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/2\" - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 5/8\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3/4\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 7/8\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/8\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/4\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/2\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 3/4\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2 1/2\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3\" - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 5/8\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3/4\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/4\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/2\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 3/4\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2\" - e:1,6mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2 1/2\" - e:1,6mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3 1/2\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 4\" - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1\" - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 1/2\" - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1 3/4\" - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2\" - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2 1/2\" - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3\" - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 4\" - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 4 1/2\" - e:2\"",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 1\" - e:2,5",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2.1/2\" - e:2,5",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 4\" - e:2,5",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2\" - e:3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 2 1/2\" - e:3",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3\" - e:3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 3 1/2\" - e:3",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 4\" - e:3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 4 1/2\" - e:3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 5\" - e:3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo ELIPTICO 23\" - e:53 X 1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo ELIPTICO 23\" - e:53 X 1.6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 80\" - e:120 x 2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 40\" - e:40 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 40\" - e:80 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 50\" - e:50 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 50\" - e:100 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 60\" - e:100 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 80\" - e:80 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 80\" - e:120 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 80\" - e:160 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 90\" - e:90 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 100\" - e:100 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 150\" - e:150 x 3,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 40\" - e:80 x 4,75",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano redondo 80\" - e:160 x 4,75",
         "unidad": "barra"
       }
     ],
     "Caño estructural cuadrado": [
       {
-        "variante": "40x40x2mm - barra 6m",
+        "variante": "Cano cuadrado 10x10mm - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "50x50x2mm - barra 6m",
+        "variante": "Cano cuadrado 12x12mm - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "60x60x3mm - barra 6m",
+        "variante": "Cano cuadrado 15x15mm - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "80x80x3mm - barra 6m",
+        "variante": "Cano cuadrado 20x20mm - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "100x100x4mm - barra 6m",
+        "variante": "Cano cuadrado 25x25mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 30x30mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 40x40mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 12x12mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 15x15mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 20x20mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 25x25mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 30x30mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 40x40mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 45x45mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 50x50mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 60x60mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 12x12mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 15x15mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 20x20mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 25x25mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 30x30mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 40x40mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 50x50mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 60x60mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 80x80mm - e:1.6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 100x100mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 40x40mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 50x50mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 60x60mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 80x80mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano cuadrado 100x100mm - e:2",
         "unidad": "barra"
       }
     ],
     "Caño estructural rectangular": [
       {
-        "variante": "40x20x2mm - barra 6m",
+        "variante": "Cano rectangular 10x20mm - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "60x40x2mm - barra 6m",
+        "variante": "Cano rectangular 10x30mm - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "80x40x3mm - barra 6m",
+        "variante": "Cano rectangular 10x40mm - e:0,9",
         "unidad": "barra"
       },
       {
-        "variante": "100x50x3mm - barra 6m",
+        "variante": "Cano rectangular 15x20mm - e:0,9",
         "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 15x25mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 15x30mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x30mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x40mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x50mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x60mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x40mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x50mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x60mm - e:0,9",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 10x20mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 10x30mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 10x40mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 15x20mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 15x25mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 15x30mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x30mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x40mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x50mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x60mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x40mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x50mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x60mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x70mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x50mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x60mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x80mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x100mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 25x50mm - e:1,2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 10x30mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x30mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x40mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x50mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x60mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x40mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x50mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x60mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x70mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x50mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x60mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x80mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x100mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x120mm - e:1.6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 50x100mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 60x100mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 60x120mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 80x100mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 80x120mm - e:1.6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 20x100mm - e:1,6",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x40mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x50mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x60mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 30x70mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x60mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x80mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x100mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x120mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 50x100mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 50x150mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 60x100mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 60x120mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 80x100mm - e:2",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Cano rectangular 40x60mm - e:3,2",
+        "unidad": "barra"
+      }
+    ],
+    "Chapa acanalada zinc N°25": [
+      {
+        "variante": "Chapa acanalada zinc N25 - 1.086x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N25 - 1.086x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N25 - 1.086x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N25 - 1.086x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N25 - 1.086x6.00m",
+        "unidad": "chapa"
+      }
+    ],
+    "Chapa acanalada zinc N°27": [
+      {
+        "variante": "Chapa acanalada zinc N27 - 1.086x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N27 - 1.086x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N27 - 1.086x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N27 - 1.086x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada zinc N27 - 1.086x6.00m",
+        "unidad": "chapa"
+      }
+    ],
+    "Chapa acanalada galvanizada N°25": [
+      {
+        "variante": "Chapa acanalada galvanizada N25 - 1.086x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N25 - 1.086x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N25 - 1.086x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N25 - 1.086x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N25 - 1.086x6.00m",
+        "unidad": "chapa"
+      }
+    ],
+    "Chapa acanalada galvanizada N°27": [
+      {
+        "variante": "Chapa acanalada galvanizada N27 - 1.086x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N27 - 1.086x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N27 - 1.086x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N27 - 1.086x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada galvanizada N27 - 1.086x6.00m",
+        "unidad": "chapa"
+      }
+    ],
+    "Chapa acanalada color": [
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N10 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N10 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N10 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N10 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N10 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N10 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N10 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N10 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N10 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N10 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N10 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N10 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N10 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N10 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N10 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N10 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N10 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N10 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N10 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N10 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N10 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Azul N01 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N01 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N01 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N01 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N01 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Blanca N01 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N01 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N01 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N01 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N01 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Gris N01 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N01 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N01 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N01 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N01 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Roja N01 - 1.10x6.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N01 - 1.10x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N01 - 1.10x3.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N01 - 1.10x4.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N01 - 1.10x5.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa acanalada color Verde N01 - 1.10x6.00m",
+        "unidad": "chapa"
+      }
+    ],
+    "Chapa galvanizada lisa": [
+      {
+        "variante": "Chapa galvanizada lisa N12 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N14 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N16 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N18 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N20 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N22 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N30 - 1x2m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N12 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N14 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N16 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N18 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N20 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N22 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N24 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N27 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N24 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N24 - 1.22x2.00m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N22 - 1x3m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa galvanizada lisa N22 - 1.22x3m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa lisa color Blanca N24 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa lisa color Gris N24 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa lisa color Roja N24 - 1.22x2.44m",
+        "unidad": "chapa"
+      },
+      {
+        "variante": "Chapa lisa color Verde N24 - 1.22x2.44m",
+        "unidad": "chapa"
       }
     ],
     "Malla electrosoldada": [
       {
-        "variante": "Ø 4",
-        "unidad": "2mm - 15x15 - 2.15x5m"
+        "variante": "Malla 5x5cm O 2.6mm - 1.2x3m",
+        "unidad": "pano"
       },
       {
-        "variante": "Ø 4",
-        "unidad": "2mm - 15x15 - 2.15x6m"
+        "variante": "Malla 2.5x2.5cm O 2.6mm - 1.2x3m Q216",
+        "unidad": "pano"
       },
       {
-        "variante": "Ø 5mm - 15x15 - 2.15x5m",
-        "unidad": "paño"
+        "variante": "Malla 15x15cm O 5mm - 2.40x6m Q131",
+        "unidad": "pano"
       },
       {
-        "variante": "Ø 5mm - 15x15 - 2.15x6m",
-        "unidad": "paño"
+        "variante": "Malla 15x15cm O 6mm - 2.40x6m Q188",
+        "unidad": "pano"
       },
       {
-        "variante": "Ø 6mm - 15x15 - 2.15x6m",
-        "unidad": "paño"
+        "variante": "Malla 10x10cm O 5mm - 2.40x6m Q196",
+        "unidad": "pano"
+      },
+      {
+        "variante": "Malla 15x15cm O 6.5mm - 2.40x6m Q221",
+        "unidad": "pano"
+      },
+      {
+        "variante": "Malla 15x15cm O 7mm - 2.40x6m Q257",
+        "unidad": "pano"
+      },
+      {
+        "variante": "Malla 15x15cm O 8mm - 2.40x6m Q335",
+        "unidad": "pano"
+      },
+      {
+        "variante": "Malla 15x15cm O 8.5mm - 2.40x6m",
+        "unidad": "pano"
+      },
+      {
+        "variante": "Malla 15x15cm O 10mm - 2.40x6m Q524",
+        "unidad": "pano"
+      },
+      {
+        "variante": "Malla 15x15cm O 12mm - 2.40x6m Q754",
+        "unidad": "pano"
+      },
+      {
+        "variante": "Malla 15x25cm O 5mm - 2.40x6m",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA 15 X 25 6-5mm 2,40 X 6M R188",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA 15 X 25 6,5-5mm 2,40 X 6M R221",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA 15 X 25 7-5mm 2,40 X 6M R257",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA 15 X 25 8-5mm 2,40 X 6M R335",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA 15 X 25 8,5-5mm 2,40 X 6M R378",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA 15 X 25 10-6mm 2,40 X 6M R524",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA 15 X 25 12-7mm 2,40 X 6M R754",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA MINI 15 x 15 5mm 2.40 X 3 M",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA MINI 15 x 15 6mm 2,40 x 3 M",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA MINI 15 x 15 8mm 2,40 x 3 M",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA MINI 10 x 10 5mm 2,40 x 3 M",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA MINI 15 x 25 5mm 2,40 x 3 M",
+        "unidad": "pano"
+      },
+      {
+        "variante": "MALLA P/CERCO 5 x 15  3 mm. 2 x 12 mt.",
+        "unidad": "pano"
       }
     ],
-    "Chapa lisa galvanizada": [
+    "Alambre negro": [
       {
-        "variante": "N°26 - 1x2m",
-        "unidad": "chapa"
-      },
-      {
-        "variante": "N°24 - 1x2m",
-        "unidad": "chapa"
-      },
-      {
-        "variante": "N°22 - 1x2m",
-        "unidad": "chapa"
-      }
-    ],
-    "Chapa acanalada galvanizada": [
-      {
-        "variante": "N°26 - 0.76x3m",
-        "unidad": "chapa"
-      },
-      {
-        "variante": "N°26 - 0.76x4m",
-        "unidad": "chapa"
-      },
-      {
-        "variante": "N°26 - 0.76x6m",
-        "unidad": "chapa"
-      },
-      {
-        "variante": "N°24 - 0.76x3m",
-        "unidad": "chapa"
-      },
-      {
-        "variante": "N°24 - 0.76x6m",
-        "unidad": "chapa"
-      }
-    ],
-    "Alambre negro recocido": [
-      {
-        "variante": "N°16 - rollo 25kg",
+        "variante": "Alambre negro N8",
         "unidad": "rollo"
       },
       {
-        "variante": "N°18 - rollo 25kg",
+        "variante": "Alambre negro N9",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre negro N10",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre negro N12",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre negro N14",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre negro N15",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre negro N16",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre negro N17",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre crudo N8",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre crudo N11",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre crudo N12",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre crudo N12",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre crudo N13",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre crudo N14",
         "unidad": "rollo"
       }
     ],
     "Alambre galvanizado": [
       {
-        "variante": "N°14 - rollo 25kg",
+        "variante": "Alambre galvanizado N8",
         "unidad": "rollo"
       },
       {
-        "variante": "N°16 - rollo 25kg",
+        "variante": "Alambre galvanizado N9",
         "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre galvanizado N10",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre galvanizado N12",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre galvanizado N13",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre galvanizado N14",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre galvanizado N15",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre galvanizado N16",
+        "unidad": "rollo"
+      },
+      {
+        "variante": "Alambre galvanizado N20",
+        "unidad": "rollo"
+      }
+    ],
+    "Perfil L (ángulo)": [
+      {
+        "variante": "Angulo 1/2 X 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 5/8 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 3/4 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 7/8 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 1/4 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 1/2 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 3/4 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 2 x 1/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 x 3/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 1/4 x 3/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 1/2 x 3/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 3/4 x 3/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 2 x 3/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 2 1/4 x 3/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 2 1/2 x 3/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 1 1/2 x 1/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 2 X 1/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 2 1/4 X 1/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 2 1/2 X 1/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 3 X 1/4",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 3 X 5/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 3 1/2 X 5/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 4 X 5/16",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 3 X 3/8 X 6 MTS",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 3 1/2 X 3/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 4 X 3/8",
+        "unidad": "barra"
+      },
+      {
+        "variante": "Angulo 4 X 1/2",
+        "unidad": "barra"
+      }
+    ],
+    "Perfil U (canal)": [
+      {
+        "variante": "U 40x20mm e:5mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "U 50x25mm e:5mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "U 60x30mm e:6mm",
+        "unidad": "barra"
+      },
+      {
+        "variante": "U 65x42mm e:5mm",
+        "unidad": "barra"
+      }
+    ],
+    "UPN": [
+      {
+        "variante": "UPN 80 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 100 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 120 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 140 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 160 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 180 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 200 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 220 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 240 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 260 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 280 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 300 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 320 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "UPN 400 - barra 12m",
+        "unidad": "barra"
+      }
+    ],
+    "Perfil IPN": [
+      {
+        "variante": "IPN 80 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 100 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 120 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 140 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 160 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 180 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 200 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 220 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 240 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 260 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 280 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 300 - barra 12m",
+        "unidad": "barra"
+      },
+      {
+        "variante": "IPN 450 - barra 12m",
+        "unidad": "barra"
       }
     ]
   },

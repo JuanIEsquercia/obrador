@@ -1,0 +1,78 @@
+{
+  "Ladrillo hueco": [
+    {
+      "variante": "8x18x33cm",
+      "unidad": "millar"
+    },
+    {
+      "variante": "12x18x33cm",
+      "unidad": "millar"
+    },
+    {
+      "variante": "18x18x33cm",
+      "unidad": "millar"
+    },
+    {
+      "variante": "8x18x33cm",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "12x18x33cm",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "18x18x33cm",
+      "unidad": "unidad"
+    }
+  ],
+  "Ladrillo macizo": [
+    {
+      "variante": "5.5x12x24cm",
+      "unidad": "millar"
+    },
+    {
+      "variante": "5.5x12x24cm",
+      "unidad": "unidad"
+    }
+  ],
+  "Ladrillo de campo": [
+    {
+      "variante": "Estándar",
+      "unidad": "millar"
+    },
+    {
+      "variante": "Estándar",
+      "unidad": "unidad"
+    }
+  ],
+  "Bloque de hormigón": [
+    {
+      "variante": "19x19x39cm",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "14x19x39cm",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "9x19x39cm",
+      "unidad": "unidad"
+    }
+  ],
+  "Adoquín de hormigón": [
+    {
+      "variante": "20x10x6cm",
+      "unidad": "m2"
+    },
+    {
+      "variante": "20x10x8cm",
+      "unidad": "m2"
+    }
+  ],
+  "Piedra laja": [
+    {
+      "variante": "Natural irregular",
+      "unidad": "m2"
+    }
+  ]
+}

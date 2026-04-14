@@ -1,0 +1,70 @@
+{
+  "Arena fina": [
+    {
+      "variante": "Suelta - entrega a granel",
+      "unidad": "m3"
+    },
+    {
+      "variante": "Bolsa 50kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Arena gruesa": [
+    {
+      "variante": "Suelta - entrega a granel",
+      "unidad": "m3"
+    },
+    {
+      "variante": "Bolsa 50kg",
+      "unidad": "bolsa"
+    }
+  ],
+  "Arena media": [
+    {
+      "variante": "Suelta - entrega a granel",
+      "unidad": "m3"
+    }
+  ],
+  "Piedra partida": [
+    {
+      "variante": "Tamaño 6mm - a granel",
+      "unidad": "m3"
+    },
+    {
+      "variante": "Tamaño 19mm - a granel",
+      "unidad": "m3"
+    },
+    {
+      "variante": "Tamaño 25mm - a granel",
+      "unidad": "m3"
+    },
+    {
+      "variante": "Tamaño 38mm - a granel",
+      "unidad": "m3"
+    }
+  ],
+  "Granza": [
+    {
+      "variante": "A granel",
+      "unidad": "m3"
+    }
+  ],
+  "Tosca": [
+    {
+      "variante": "A granel",
+      "unidad": "m3"
+    }
+  ],
+  "Ripio": [
+    {
+      "variante": "A granel",
+      "unidad": "m3"
+    }
+  ],
+  "Suelo seleccionado": [
+    {
+      "variante": "A granel",
+      "unidad": "m3"
+    }
+  ]
+}

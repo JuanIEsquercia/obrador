@@ -1,0 +1,216 @@
+{
+  "Cable unipolar": [
+    {
+      "variante": "1mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "1.5mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "2.5mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "4mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "6mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "10mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "16mm² - rollo 50m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "25mm² - rollo 50m",
+      "unidad": "rollo"
+    }
+  ],
+  "Cable bipolar (mellizo)": [
+    {
+      "variante": "2x1mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "2x1.5mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "2x2.5mm² - rollo 100m",
+      "unidad": "rollo"
+    }
+  ],
+  "Cable manguera": [
+    {
+      "variante": "2x1.5mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "2x2.5mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "3x2.5mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "3x4mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "3x6mm² - rollo 50m",
+      "unidad": "rollo"
+    }
+  ],
+  "Cable subterráneo": [
+    {
+      "variante": "2x4mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "2x6mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "3x4mm² - rollo 100m",
+      "unidad": "rollo"
+    },
+    {
+      "variante": "3x6mm² - rollo 100m",
+      "unidad": "rollo"
+    }
+  ],
+  "Disyuntor termomagnético": [
+    {
+      "variante": "1x10A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "1x16A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "1x20A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "1x25A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "1x32A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "2x16A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "2x20A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "2x25A",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "2x32A",
+      "unidad": "unidad"
+    }
+  ],
+  "Disyuntor diferencial": [
+    {
+      "variante": "2x25A 30mA",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "2x40A 30mA",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "4x25A 30mA",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "4x40A 30mA",
+      "unidad": "unidad"
+    }
+  ],
+  "Tablero eléctrico": [
+    {
+      "variante": "4 bocas riel DIN",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "8 bocas riel DIN",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "12 bocas riel DIN",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "16 bocas riel DIN",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "24 bocas riel DIN",
+      "unidad": "unidad"
+    }
+  ],
+  "Caja de paso": [
+    {
+      "variante": "10x10cm plástica",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "15x15cm plástica",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "20x20cm plástica",
+      "unidad": "unidad"
+    }
+  ],
+  "Caja rectangular embutir": [
+    {
+      "variante": "Standard IRAM",
+      "unidad": "unidad"
+    }
+  ],
+  "Tomacorriente": [
+    {
+      "variante": "2P+T 10A IRAM",
+      "unidad": "unidad"
+    },
+    {
+      "variante": "2P+T 20A IRAM",
+      "unidad": "unidad"
+    }
+  ],
+  "Llave simple": [
+    {
+      "variante": "10A",
+      "unidad": "unidad"
+    }
+  ],
+  "Llave doble": [
+    {
+      "variante": "10A",
+      "unidad": "unidad"
+    }
+  ],
+  "Llave triple": [
+    {
+      "variante": "10A",
+      "unidad": "unidad"
+    }
+  ]
+}

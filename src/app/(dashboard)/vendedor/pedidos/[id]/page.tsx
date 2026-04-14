@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
+import { crearClienteServidor, obtenerUsuario } from '@/lib/supabase/servidor'
 import { formatearFecha, diasRestantes } from '@/lib/utils'
 import FormularioCotizacion from './formulario-cotizacion'
 import type { LineaPedido, Cotizacion, LineaCotizacion, FamiliaProducto } from '@/types'
+
+export const metadata = { title: 'Detalle del Pedido' }
 
 interface Props {
   params: Promise<{ id: string }>
@@ -11,41 +13,38 @@ interface Props {
 
 export default async function PaginaCotizarPedido({ params }: Props) {
   const { id } = await params
-  const supabase = await crearClienteServidor()
-
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await obtenerUsuario()
   if (!user) redirect('/login')
 
-  // Traer pedido (publicado o cerrado — el vendedor puede ver ambos si cotizó)
-  const { data: pedido } = await supabase
-    .from('pedidos')
-    .select('*, comprador:perfiles(nombre, empresa, telefono)')
-    .eq('id', id)
-    .in('estado', ['publicado', 'cerrado'])
-    .single()
+  const supabase = await crearClienteServidor()
+
+  // Pedido + los 3 recursos independientes en paralelo
+  const [{ data: pedido }, { data: lineas }, { data: cotizacionExistente }, { data: misF }] =
+    await Promise.all([
+      supabase
+        .from('pedidos')
+        .select('*, comprador:perfiles(nombre, empresa, telefono)')
+        .eq('id', id)
+        .in('estado', ['publicado', 'cerrado'])
+        .single(),
+      supabase
+        .from('lineas_pedido')
+        .select('*, familia:familias_producto(id, nombre)')
+        .eq('pedido_id', id)
+        .order('orden'),
+      supabase
+        .from('cotizaciones')
+        .select('*, lineas:lineas_cotizacion(*)')
+        .eq('pedido_id', id)
+        .eq('vendedor_id', user.id)
+        .single(),
+      supabase
+        .from('vendedor_familias')
+        .select('familia_id')
+        .eq('vendedor_id', user.id),
+    ])
 
   if (!pedido) notFound()
-
-  // Traer líneas con familia
-  const { data: lineas } = await supabase
-    .from('lineas_pedido')
-    .select('*, familia:familias_producto(id, nombre)')
-    .eq('pedido_id', id)
-    .order('orden')
-
-  // Cotización existente del vendedor
-  const { data: cotizacionExistente } = await supabase
-    .from('cotizaciones')
-    .select('*, lineas:lineas_cotizacion(*)')
-    .eq('pedido_id', id)
-    .eq('vendedor_id', user.id)
-    .single()
-
-  // Familias que comercializa el vendedor
-  const { data: misF } = await supabase
-    .from('vendedor_familias')
-    .select('familia_id')
-    .eq('vendedor_id', user.id)
 
   const misFamiliaIds = new Set((misF ?? []).map(f => f.familia_id))
 

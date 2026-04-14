@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { notFound, redirect } from 'next/navigation'
-import { crearClienteServidor } from '@/lib/supabase/servidor'
-import { formatearFecha, colorEstadoPedido, textoEstadoPedido, diasRestantes } from '@/lib/utils'
+import { crearClienteServidor, obtenerUsuario } from '@/lib/supabase/servidor'
+import { formatearFecha, colorEstadoPedido, textoEstadoPedido } from '@/lib/utils'
 import AccionesPedido from '@/app/(dashboard)/comprador/pedidos/[id]/acciones-pedido'
 import VistaCotizaciones from '@/components/cotizaciones/vista-cotizaciones'
 import type { LineaPedido, CotizacionConLineas, FamiliaProducto, Pedido } from '@/types'
@@ -10,12 +10,19 @@ interface Props {
   params: Promise<{ id: string; licitacionId: string }>
 }
 
+export async function generateMetadata({ params }: Props) {
+  const { licitacionId } = await params
+  const supabase = await crearClienteServidor()
+  const { data } = await supabase.from('pedidos').select('titulo').eq('id', licitacionId).single()
+  return { title: data?.titulo ?? 'Detalle de Licitación' }
+}
+
 export default async function PaginaDetalleLicitacion({ params }: Props) {
   const { id: obraId, licitacionId } = await params
-  const supabase = await crearClienteServidor()
-
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await obtenerUsuario()
   if (!user) redirect('/login')
+
+  const supabase = await crearClienteServidor()
 
   // Traer pedido (debe pertenecer al comprador y a la obra)
   const { data: pedido } = await supabase
